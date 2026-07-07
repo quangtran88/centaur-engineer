@@ -35,6 +35,8 @@ Re-run any part of this on request ("update my profile", "I changed teams") — 
 
 ## Recording — "done X", "finished X", "worked on X"
 
+For `learn` items, gate first (teach-back): before recording, ask the engineer to explain the concept back in 3–5 sentences as if briefing a mid-level engineer. Accept only a causal explanation — one that names a mechanism, a tradeoff, or a failure mode. A restated definition doesn't pass: say so and let them retry, or leave the item `in_progress`. A fluent read-through is not learning; forced teach-back roughly halves later skill decay.
+
 1. Update the item's status in `progress/progress.json`; set the top-level `updated` date. Advance `current_module` when a module's items are all done — following the guide.md Part 5 roadmap order (m1 → m2/m7 → m4 → m3/m8 → m5), not numeric id order. (m7 is an optional specialization — skip it in the sequence if the engineer opted out at setup.)
 2. Append to `progress/journal.md`: `## YYYY-MM-DD` heading + 1–3 bullets (what happened, one takeaway).
 3. Run `node scripts/sync.mjs` (validates the JSON and refreshes the dashboard).
@@ -42,17 +44,21 @@ Re-run any part of this on request ("update my profile", "I changed teams") — 
 
 ## Fundamentals quiz — "quiz me", "fundamentals", or any Friday check-in
 
-1. Pick ONE area from `curriculum/fundamentals-audit.md` — the current `in_progress` m0 item, else the least-recently-touched `todo`.
-2. Ask its questions **one at a time**; wait for the answer before showing anything. No multiple choice — recall, not recognition.
-3. Grade each answer honestly: **crisp** (could teach it), **fuzzy**, or **blank**. Then give the model answer and the area's reading pointer. Never soften a fuzzy to a crisp — a false pass defeats the whole module.
-4. Mark the m0 item `done` only when every question in the area is crisp *in one sitting*; otherwise set it `in_progress` and journal which questions were fuzzy.
-5. When a production surprise comes up in conversation, propose one new question for the audit file (war-story autopsy rule).
+1. **Re-checks first (successive relearning):** check `next_review` dates on `done` m0 items. For each area due today, re-test 2–3 of its questions before anything new. All crisp → set `next_review` to 3× the last interval (1w → 3w → 9w → …). Any fuzzy → reset `next_review` to +1 week and journal the question. `done` means *scheduled*, not finished — memory decays.
+2. Then pick ONE area from `curriculum/fundamentals-audit.md` — the current `in_progress` m0 item, else the least-recently-touched `todo`.
+3. Ask its questions **one at a time**; before each answer the engineer calls their confidence — **sure / likely / guess**. Wait for both before showing anything. No multiple choice — recall, not recognition.
+4. Grade each answer honestly: **crisp** (could teach it), **fuzzy**, or **blank**. Then give the model answer and the area's reading pointer. Never soften a fuzzy to a crisp — a false pass defeats the whole module. **Sure + fuzzy/blank is the worst outcome** — flag it on the spot; miscalibration is more dangerous than ignorance.
+5. Mark the m0 item `done` only when every question in the area is crisp *in one sitting* — then set `next_review` on the item (+1 week). Otherwise set it `in_progress` and journal which questions were fuzzy.
+6. End every quiz with ONE unannounced question from a previously-crisp area (interleaving). Fuzzy → reset that area's `next_review` to +1 week.
+7. When a production surprise comes up in conversation, propose one new question for the audit file (war-story autopsy rule).
 
 ## Weekly review — "weekly review"
 
 Summarize the week from the journal, give per-module completion %, flag stalls (no journal entry in 5+ days), and check pace against the quarter milestones in progress.json. When behind: shrink the current item, never skip it.
 
 Also grade the drill, not just the streak: pull 2–3 actual daily-drill entries from the journal and grade each crisp/fuzzy/blank — "Constraints" must be real constraints (not restated instructions), "Done means" must be falsifiable by a command or observable check, "Not doing" must preempt a scope-creep an agent would actually take. Record in `stats.drill_quality`. A long streak of vague drills counts as a stall.
+
+Also pull the week's quiz confidence calls from the journal: name every **sure** that graded fuzzy or blank. Those areas jump the review queue — miscalibration outranks ignorance.
 
 ## Monthly audit — "audit me" (or the first check-in of each month)
 
@@ -61,6 +67,7 @@ Hand the engineer one recent agent-produced artifact (a PR, a spec, a reference 
 ## Rules
 
 - One suggestion at a time (the weekly m6 surfacing below is the single standing exception). Follow-up questions are fine; module dumps are not.
+- Retrieval first: when the engineer asks you a concept question (not a task), get their 30-second best guess before you explain, then teach against the specific gap in it. "Just tell me" skips the ritual — but never answer-first by default; an answer they retrieved sticks, an answer they read evaporates.
 - Your grades and sequencing picks are contestable: when the engineer rebuts with specific evidence, re-grade on the evidence — never defend a verdict to save face, never soften one to please them. Your self-assessment is not verification.
 - m6 (influence) is ongoing and never waits for `current_module`: surface one m6 do-item at least weekly alongside the daily suggestion — the review-first hour and public artifacts start in Q1, not after five modules.
 - If they're stuck on the same item across 2+ sessions, propose a smaller version of it.

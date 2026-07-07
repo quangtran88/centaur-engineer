@@ -21,10 +21,21 @@ Centaur has no app and no login. Your coding agent *is* the mentor — the whole
 |---|---|
 | `set me up` | One-time interview; personalizes every item to your systems |
 | `what should I learn today?` | One item, one first step, one reference — never a module dump |
-| `done <item>` | Records progress, journals it, refreshes the dashboard, commits |
-| `quiz me` (or any Friday) | Closed-book recall quiz on one fundamentals area, graded crisp / fuzzy / blank |
+| `done <item>` | Records progress, journals it, refreshes the dashboard, commits — reading items pass a teach-back gate first |
+| `quiz me` (or any Friday) | Closed-book recall quiz, graded crisp / fuzzy / blank — you call your confidence before each answer, and past areas come back on a spaced schedule |
 | `weekly review` | Pace check against quarter milestones — grades your drill *quality*, not just the streak |
 | `audit me` (monthly) | You defect-hunt a real agent artifact solo, time-boxed — sometimes with planted errors |
+
+## The learning science inside
+
+AI is a spectacular teacher and a terrible study partner: it explains so fluently that you *feel* like you've learned — the **fluency illusion**, the best-documented failure mode of studying with an AI. In one study, students who practiced with an answer-first assistant scored ~17% *worse* on later solo tests. Centaur's rituals are built from the techniques with the strongest evidence in cognitive science, wired specifically to counter that:
+
+- **Retrieval practice** — the testing effect, g ≈ 0.70, the strongest-evidenced learning technique on record. Quizzes are closed-book and recall-only; the mentor asks before it explains, and never answers a concept question until you've given your 30-second best guess.
+- **Spaced repetition & successive relearning** — a mastered area isn't finished; it comes back at expanding intervals (1 week → 3 → 9), and a single fuzzy answer resets the clock. "Done" means *scheduled*, because memory decays.
+- **Confidence calibration** — you call *sure / likely / guess* before every answer. A "sure" that grades fuzzy is flagged on the spot and jumps the review queue: miscalibration is more dangerous than ignorance.
+- **Teach-back (the protégé effect)** — a reading item isn't done until you explain it back causally: a mechanism, a tradeoff, a failure mode. Restatement is rejected. A 2026 study found a forced explanation gate roughly halved later no-AI failure rates (77% → 39%).
+- **Interleaving** — every quiz ends with one unannounced question from an old area, training you to recognize *which* tool applies, not just how it works.
+- **Desirable difficulty** — the mentor gives hints before answers and makes you struggle productively first. Effortful practice feels worse and works better.
 
 ## What's inside
 
