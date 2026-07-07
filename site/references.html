@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centaur — Reference Library</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --paper: #FAFBF9; --ink: #1C2321; --muted: #5A6662; --accent: #1F6F54;
+    --copper: #9C5B33; --rule: #DDE3DF; --card: #F1F4F1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #121816; --ink: #E6EBE8; --muted: #93A09A; --accent: #4FA383;
+      --copper: #C98A5E; --rule: #26302C; --card: #1A211E;
+    }
+  }
+  body {
+    font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16px; line-height: 1.62; margin: 0; padding: 0 20px;
+  }
+  .mono, .m-tag { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+  .page { max-width: 72ch; margin: 0 auto; padding: 44px 0 80px; }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px;
+  }
+  h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .intro { color: var(--muted); font-size: 14.5px; margin: 0 0 36px; }
+  .intro a { color: var(--accent); }
+
+  section { border-top: 2px solid var(--accent); margin-top: 40px; padding-top: 14px; }
+  .m-tag { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  li:last-child { border-bottom: 0; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .why { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
+  .src { font-size: 12.5px; color: var(--muted); font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+  .book { font-style: italic; }
+
+  footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">Centaur · Reference Library</p>
+  <h1>The reading library</h1>
+  <p class="intro">Every reference from the curriculum, verified and annotated — grouped by module. Written for any engineer who works with AI coding agents and wants to be the stronger half of the pair. Back to the <a href="index.html">dashboard</a>; the full guide is at <span class="mono">curriculum/guide.md</span>.</p>
+
+  <section>
+    <p class="m-tag">Core shelf · read in order</p>
+    <h2>The six books</h2>
+    <ul>
+      <li><span class="book">Working Backwards</span> — Bryar &amp; Carr <span class="src">workingbackwards.com</span><span class="why">The PR/FAQ discipline: write the press release and hostile FAQ before building. Module 1's backbone.</span></li>
+      <li><span class="book">The Staff Engineer's Path</span> — Tanya Reilly · <a href="https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/">O'Reilly page</a><span class="why">The operating manual for the staff+ role this curriculum points at: scope, influence, and time allocation past senior.</span></li>
+      <li><span class="book">Designing Data-Intensive Applications, 2nd ed.</span> — Kleppmann · <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/">O'Reilly page</a><span class="why">The theory beneath your workflow engine, your partitioned database, and every consistency decision you make. Ch. 6–10 for Module 3 (2nd-ed numbering).</span></li>
+      <li><span class="book">A Philosophy of Software Design, 2nd ed.</span> — Ousterhout · <a href="https://web.stanford.edu/~ouster/cgi-bin/book.php">official page</a><span class="why">Taste, made teachable: deep modules, information hiding, complexity as the enemy.</span></li>
+      <li><span class="book">The Mom Test</span> — Fitzpatrick · <a href="https://momtestbook.com/">momtestbook.com</a><span class="why">How to extract truth from stakeholders who politely lie. Three-hour read, career-long payoff.</span></li>
+      <li><span class="book">Thinking in Systems</span> — Donella Meadows<span class="why">Feedback loops, stocks, and leverage points — you'll recognize your own tooling stack and your org in it.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 00 · Fundamentals audit · interleaved</p>
+    <h2>AI-era mechanics (Part 2 of the audit)</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=7xTGNNLPyMI">Deep Dive into LLMs like ChatGPT</a> · <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g">Intro to Large Language Models</a> <span class="src">Andrej Karpathy · YouTube</span><span class="why">The single best mechanism-level explanation of the thing you talk to all day — tokens, training, RLHF, hallucination. Area K.</span></li>
+      <li><a href="https://www.3blue1brown.com/lessons/gpt">Transformers, visually</a> · <a href="https://www.3blue1brown.com/lessons/attention">Attention, step by step</a> <span class="src">3Blue1Brown</span><span class="why">Visual intuition for what attention actually computes — pairs with Karpathy. Area K.</span></li>
+      <li><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a> <span class="src">Jay Alammar</span><span class="why">The classic diagram-first walkthrough; read once, reference forever. Area K.</span></li>
+      <li><a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a> <span class="src">arXiv 2307.03172</span><span class="why">Why long contexts degrade and position matters — the paper behind "put invariants at the edges". Areas K–L.</span></li>
+      <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching">Prompt caching</a> <span class="src">Anthropic docs</span><span class="why">Prefix-caching mechanics — the economics behind message ordering in agent sessions. Area L.</span></li>
+      <li><a href="https://modelcontextprotocol.io">Model Context Protocol</a> <span class="src">modelcontextprotocol.io</span><span class="why">What MCP standardizes — and by extension, the attack surface each connected server opens. Area L.</span></li>
+      <li><a href="https://simonwillison.net/2023/Oct/23/embeddings/">Embeddings: what they are and why they matter</a> <span class="src">Simon Willison</span><span class="why">The best plain-language mechanism explanation of embeddings and similarity. Area M.</span></li>
+      <li><a href="https://www.anthropic.com/engineering/contextual-retrieval">Contextual Retrieval</a> <span class="src">Anthropic</span><span class="why">Why naive RAG fails (context-free chunks) and the measured fix: contextual embeddings + BM25 + reranking. Area M.</span></li>
+      <li><a href="https://www.infoq.com/presentations/latency-response-time/">How NOT to Measure Latency</a> <span class="src">Gil Tene · InfoQ</span><span class="why">Coordinated omission — the bug most load tests (probably including yours) have. Area O.</span></li>
+      <li><a href="https://research.google/pubs/the-tail-at-scale/">The Tail at Scale</a> <span class="src">Dean &amp; Barroso</span><span class="why">Why p99 dominates user experience under fan-out. Areas N–O.</span></li>
+      <li><a href="https://www.brendangregg.com/usemethod.html">The USE Method</a> <span class="src">Brendan Gregg</span><span class="why">Utilization–Saturation–Errors: the three questions per resource when something saturates. Area O.</span></li>
+      <li><span class="book">Parts 1 &amp; 3 of the audit (areas A–J, Q–V)</span><span class="why">Their reading pointers live inline in curriculum/fundamentals-audit.md — every area ends with an "If fuzzy:" pointer; no separate shelf.</span></li>
+      <li><span class="book">Area P (AI security mechanics)</span><span class="why">Its reading is on the Module 04 shelf below: Willison's lethal trifecta + prompt-injection series, OWASP LLM Top 10.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 01 · 6 weeks</p>
+    <h2>Precision writing &amp; specification</h2>
+    <ul>
+      <li><a href="https://workingbackwards.com/resources/working-backwards-pr-faq/">PR/FAQ instructions &amp; template</a> <span class="src">workingbackwards.com</span><span class="why">The official template from the Working Backwards authors — use it for exercise m1-d1.</span></li>
+      <li><a href="https://coda.io/@colin-bryar/working-backwards-how-write-an-amazon-pr-faq">How to write an Amazon PR/FAQ</a> <span class="src">Colin Bryar · coda.io</span><span class="why">The narrative-meeting mechanics: how the doc is actually reviewed at Amazon.</span></li>
+      <li><a href="https://commoncog.com/putting-amazons-pr-faq-to-practice/">Putting Amazon's PR/FAQ to Practice</a> <span class="src">Commoncog</span><span class="why">Honest case study of applying PR/FAQ outside Amazon — what transfers and what doesn't.</span></li>
+      <li><a href="https://adr.github.io">Architecture Decision Records</a> · <a href="https://adr.github.io/adr-templates/">templates</a> <span class="src">adr.github.io</span><span class="why">The canonical ADR home, including Nygard's original format — for backfilling your three ADRs (m1-d2).</span></li>
+      <li><a href="https://www.industrialempathy.com/posts/design-docs-at-google/">Design Docs at Google</a> <span class="src">Malte Ubl</span><span class="why">The most-cited free description of Google's design-doc culture: structure, goals/non-goals, alternatives.</span></li>
+      <li><span class="book">"How do you design a design doc?" — John Saito (Dropbox Design, on Medium)</span><span class="why">A strong counterpoint: docs sized to risk, not ceremony. (The old dropbox.tech "Design Docs at Dropbox" URL is dead — search the title.)</span></li>
+      <li><a href="https://blog.pragmaticengineer.com/scaling-engineering-teams-via-writing-things-down-rfcs/">Scaling engineering teams via RFCs</a> <span class="src">The Pragmatic Engineer</span><span class="why">Why writing-first cultures scale — ammunition for spreading the practice at your org.</span></li>
+      <li><span class="book">On Writing Well</span> — William Zinsser<span class="why">Clarity as subtraction. Read Parts I–II; apply to every spec you write afterward.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 02 · 8 weeks</p>
+    <h2>Verification engineering: tests → evals</h2>
+    <ul>
+      <li><a href="https://fast-check.dev">fast-check</a> · <a href="https://fast-check.dev/docs/introduction/what-is-property-based-testing/">what is property-based testing</a> <span class="src">fast-check.dev</span><span class="why">TypeScript-native PBT that drops into Jest — the tool for property-testing {{your highest-stakes calculation path}}.</span></li>
+      <li><a href="https://stryker-mutator.io/docs/">StrykerJS documentation</a> <span class="src">stryker-mutator.io</span><span class="why">Mutation testing: measures whether your tests would actually catch bugs. Run on {{your highest-stakes money/data path}}.</span></li>
+      <li><a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-i">Accounting for Developers, Part I</a> · <a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-ii">II</a> · <a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-iii">III</a> <span class="src">Modern Treasury</span><span class="why">The best public treatment of double-entry thinking for engineers — the vocabulary for your invariants file.</span></li>
+      <li><a href="https://www.moderntreasury.com/journal/how-to-scale-a-ledger-part-i">How to Scale a Ledger, Part I</a> <span class="src">Modern Treasury</span><span class="why">Immutability + double-entry enforcement as architecture, not policy. Directly relevant to any ledger-shaped system you own.</span></li>
+      <li><a href="https://hamel.dev/blog/posts/evals/">Your AI Product Needs Evals</a> <span class="src">Hamel Husain</span><span class="why">The canonical starting point for domain-specific LLM eval systems.</span></li>
+      <li><a href="https://hamel.dev/blog/posts/llm-judge/">LLM-as-a-Judge: A Complete Guide</a> <span class="src">Hamel Husain</span><span class="why">How to build judges that drive decisions — and their failure modes. Pairs well with any judge-scored benchmark you've run yourself.</span></li>
+      <li><a href="https://eugeneyan.com/writing/evals/">Task-Specific LLM Evals that Do &amp; Don't Work</a> · <a href="https://eugeneyan.com/writing/product-evals/">Product Evals in Three Simple Steps</a> <span class="src">Eugene Yan</span><span class="why">Which eval patterns hold up in practice; the 2025 product-evals piece is the distilled version.</span></li>
+      <li><a href="https://github.com/sverweij/dependency-cruiser">dependency-cruiser</a> <span class="src">GitHub</span><span class="why">Architectural fitness functions for your monorepo — CI rules that block agent-introduced boundary violations (m2-d5).</span></li>
+      <li><a href="https://docs.tigerbeetle.com/">TigerBeetle docs</a> <span class="src">tigerbeetle.com</span><span class="why">The financial database built on deterministic simulation testing — study their DST rationale for m2-l6/d6.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 03 · 10 weeks</p>
+    <h2>Distributed systems, owned not borrowed</h2>
+    <ul>
+      <li><a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/">DDIA, 2nd edition</a> <span class="src">O'Reilly</span><span class="why">Ch. 6–10 (replication, sharding, transactions, faults, consistency &amp; consensus — 2nd-ed numbering) read slowly against your own platform (m3-l1/l7).</span></li>
+      <li><a href="https://jepsen.io/analyses">Jepsen analyses</a> <span class="src">jepsen.io</span><span class="why">Start with the PostgreSQL and Kafka reports; learn to read the rest. Real systems failing real consistency claims.</span></li>
+      <li><a href="https://sre.google/sre-book/table-of-contents/">Google SRE book</a> · <a href="https://sre.google/sre-book/service-level-objectives/">SLO chapter</a> <span class="src">sre.google · free</span><span class="why">Ch. 3–4: SLOs and error budgets — the vocabulary for the SLO doc you'll write for {{your most critical service}}.</span></li>
+      <li><a href="https://docs.temporal.io/workflow-definition">Temporal: workflow determinism</a> · <a href="https://docs.temporal.io/activity-definition">activity idempotency</a> · <a href="https://docs.temporal.io/activity-execution">activity execution &amp; retries</a> <span class="src">docs.temporal.io</span><span class="why">If a durable-workflow engine sits in your stack, these pages explain exactly where at-least-once + idempotency replaces "exactly-once".</span></li>
+      <li><a href="https://learntla.com">Learn TLA+</a> <span class="src">Hillel Wayne · free</span><span class="why">Stretch goal: model {{your most critical state machine}} formally. One small model rewires concurrency thinking.</span></li>
+      <li><a href="https://github.com/aphyr/distsys-class">Distributed systems class notes</a> <span class="src">Kyle Kingsbury · GitHub</span><span class="why">The Jepsen author's free course notes — the densest correct summary of the field.</span></li>
+      <li><a href="https://microservices.io/patterns/data/transactional-outbox.html">Transactional Outbox pattern</a> · <a href="https://debezium.io">Debezium (log-based CDC)</a> <span class="src">microservices.io · debezium.io</span><span class="why">The two production fixes for the dual-write problem between your system of record and its downstream consumers (m3-l6/d5).</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 04 · 8 weeks</p>
+    <h2>Agentic systems mastery + security</h2>
+    <ul>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a> <span class="src">Anthropic</span><span class="why">Workflows vs. agents, and why simple composable patterns beat frameworks. The starting point.</span></li>
+      <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective Context Engineering for AI Agents</a> <span class="src">Anthropic</span><span class="why">Context as a finite resource — the theory behind "curation over accumulation".</span></li>
+      <li><a href="https://www.anthropic.com/engineering/claude-code-best-practices">Claude Code: Best Practices</a> <span class="src">Anthropic</span><span class="why">The official playbook for the tool you drive daily; compare against your own workflow.</span></li>
+      <li><a href="https://www.anthropic.com/engineering/writing-tools-for-agents">Writing Tools for Agents</a> · <a href="https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk">Building Agents with the Claude Agent SDK</a> <span class="src">Anthropic</span><span class="why">Tool and harness design rationale — directly applicable to {{your agent platform}}.</span></li>
+      <li><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">The Lethal Trifecta</a> · <a href="https://simonwillison.net/tags/prompt-injection/">prompt-injection series</a> <span class="src">Simon Willison</span><span class="why">Odds are {{your agent platform}} has all three ingredients (private data, untrusted input, external comms). Read as an attacker.</span></li>
+      <li><a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM Applications</a> <span class="src">genai.owasp.org</span><span class="why">The checklist to exceed, not just meet, in your threat model (m4-d1).</span></li>
+      <li><a href="https://owasp.org/API-Security/">OWASP API Security Top 10</a> · <a href="https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/">Zanzibar paper</a> <span class="src">owasp.org · Google Research</span><span class="why">BOLA/IDOR is the #1 real-world API vuln; Zanzibar is the canonical ReBAC design for centralizing authz (m4-l4/d5).</span></li>
+      <li><a href="https://slsa.dev">SLSA — supply-chain levels</a> <span class="src">slsa.dev</span><span class="why">Build provenance framework for the supply-chain pass: dependency confusion, lockfile gates, AI-config poisoning (m4-d6).</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 05 · 6 weeks</p>
+    <h2>Product &amp; business judgment</h2>
+    <ul>
+      <li><a href="https://momtestbook.com/">The Mom Test</a> <span class="src">Rob Fitzpatrick</span><span class="why">Question technique for your business-case interviews with {{your product decision-maker}} (m5-d2).</span></li>
+      <li><a href="https://www.producttalk.org/">Product Talk</a> <span class="src">Teresa Torres</span><span class="why">Continuous Discovery Habits — the weekly rhythm of validating before building.</span></li>
+      <li><a href="https://amplitude.com/books/north-star">The North Star Playbook</a> <span class="src">Amplitude · free</span><span class="why">North-star + guardrail metric design for {{your flagship product}} and {{your agent platform}} (m5-d3).</span></li>
+      <li><span class="book">Unit economics: your own data</span><span class="why">No external link — the exercise is deriving cost-to-serve per account and per unit of scale from {{your company's real numbers}}.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 06 · ongoing</p>
+    <h2>Influence: leverage beyond your keyboard</h2>
+    <ul>
+      <li><a href="https://staffeng.com/">StaffEng</a> · <a href="https://staffeng.com/guides/">guides</a> <span class="src">Will Larson</span><span class="why">Stories and playbooks from engineers who made the senior→staff/principal transition.</span></li>
+      <li><a href="https://lethain.com/eng-strategies/">Writing engineering strategy</a> <span class="src">lethain.com</span><span class="why">The template for your "{{your platform}}, three years out" strategy doc: diagnosis → policy → actions.</span></li>
+      <li><a href="https://noidea.dog/staff">Being a staff+ engineer — resources</a> <span class="src">Tanya Reilly</span><span class="why">The Staff Engineer's Path author's curated resource list; the book's companion.</span></li>
+      <li><span class="book">Publishing venues</span><span class="why">Your first artifacts have homes: a personal blog or dev.to for the war stories behind {{two real incidents or systems of yours}}, GitHub for the open-source component, local meetups in your ecosystem for the talk.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 07 · 8 weeks</p>
+    <h2>Regulated-domain engineering (optional specialization)</h2>
+    <ul>
+      <li><a href="https://martinfowler.com/articles/bitemporal-history.html">Bitemporal History</a> <span class="src">Martin Fowler</span><span class="why">Valid time vs record time — the model that lets a backdated correction land without destroying "what did we report on date X" (m7-l2).</span></li>
+      <li><span class="book">Synapse/Evolve collapse coverage (2024)</span><span class="why">Read as a case study in FBO/omnibus sub-ledger reconciliation failure — the running fintech example; map it to {{your highest-stakes money/data path}}'s equivalent boundary (m7-l1). Ask your agent to pull current post-mortems when you reach this item.</span></li>
+      <li><span class="book">Primary sources: {{the regulations that bind your domain}} (GDPR, CCPA, PCI-DSS, HIPAA, LGPD — whichever apply)</span><span class="why">Many lack stable public URLs — work from official texts with your legal/compliance colleagues, then translate each rule into an enforced technical control (m7-l3/p1).</span></li>
+      <li><span class="book">Modern Treasury ledger guides</span><span class="why">Already in the Module 02 shelf — reread "How to Scale a Ledger" with the omnibus/sub-ledger boundary in mind.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="m-tag">Module 08 · 12 weeks</p>
+    <h2>Systems mechanics: the decision layer</h2>
+    <ul>
+      <li><span class="book">DDIA 2nd ed., ch. 6–10</span><span class="why">Already on the Module 03 shelf (m3-l1/l7) — Module 08 is the applied veto-vocabulary layer on top of that reading, not a second purchase of it.</span></li>
+      <li><a href="https://jepsen.io/consistency">Consistency Models</a> <span class="src">Jepsen</span><span class="why">The clickable map of the consistency ladder — every named guarantee, what implies what (m8-l1).</span></li>
+      <li><a href="https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html">How to do distributed locking</a> <span class="src">Martin Kleppmann</span><span class="why">The canonical "Redis lock" veto: GC-pause lease expiry, fencing tokens, why Redlock can't be fixed. Read antirez's reply ("Is Redlock safe?") for the counter-argument (m8-l2).</span></li>
+      <li><a href="https://raft.github.io/">Raft — In Search of an Understandable Consensus Algorithm</a> <span class="src">Ongaro &amp; Ousterhout</span><span class="why">Paper + interactive visualization. Majority math, term numbers, why 2-node HA splits brain (m8-l3).</span></li>
+      <li><a href="https://microservices.io/patterns/data/saga.html">Saga pattern</a> <span class="src">Chris Richardson</span><span class="why">Compensation design and the pivot transaction; pair with Stripe's "Idempotent requests" API docs for the key-design half (m8-l4).</span></li>
+      <li><a href="https://use-the-index-luke.com/">Use The Index, Luke</a> <span class="src">Markus Winand</span><span class="why">Index anatomy for developers: composite column order, index-only scans, and why the ORM's query defeats your index (m8-l5).</span></li>
+      <li><a href="https://www.postgresql.org/docs/current/">PostgreSQL manual — ch. 13 (locking), ch. 25 (routine vacuuming), CREATE INDEX / ALTER TABLE pages</a> <span class="src">postgresql.org</span><span class="why">The primary source for lock-queue inversion, CONCURRENTLY / NOT VALID sequences, autovacuum and wraparound (m8-l5/l6).</span></li>
+      <li><span class="book">Helland — "Life beyond Distributed Transactions" (CIDR 2007)</span><span class="why">The aggregate-is-the-atomicity-boundary argument — the upstream decider behind every SQL-vs-NoSQL debate (m8-l7). Pair with the DynamoDB USENIX ATC '22 paper for the partition half; the HNSW paper covers the vector half (m8-l12 — note pgvector implements HNSW and IVFFlat, not IVF-PQ).</span></li>
+      <li><span class="book">"Scaling Memcache at Facebook" (NSDI 2013) + "Metastable Failures in Distributed Systems" (HotOS 2021)</span><span class="why">The two papers behind m8-l8/l9: leases against the stale-set race; bistable feedback loops and why remediation amplifies (m8-l8, m8-l9).</span></li>
+      <li><a href="https://aws.amazon.com/builders-library/">AWS Builders' Library</a> <span class="src">Brooker, MacCárthaigh et al.</span><span class="why">"Timeouts, retries, and backoff with jitter", "Avoiding overload", cell-based architecture, static stability, shuffle sharding — the practitioner half of failure physics (m8-l9/l10).</span></li>
+      <li><a href="https://sre.google/sre-book/handling-overload/">Google SRE book — ch. 21 Handling Overload (+ ch. 22 Cascading Failures)</a> <span class="src">sre.google</span><span class="why">Retry budgets (~10% rule), client-side throttling, load shedding — the server-side of overload control (m8-l9).</span></li>
+      <li><span class="book">Jeff Dean's latency numbers (LADIS 2009) + Colin Scott's interactive update</span><span class="why">The napkin-math table for m8-d1 — hold the orders of magnitude in working memory and most premature migrations veto themselves.</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    Every link on this page has been fetch-verified. Anthropic/AWS links redirect to migrated domains (platform.claude.com, code.claude.com, claude.com/blog, builder.aws.com) — still valid. If one rots, ask your agent to re-verify and update this page.
+    · <a href="index.html">Dashboard</a>
+  </footer>
+</div>
+</body>
+</html>
