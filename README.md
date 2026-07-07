@@ -8,10 +8,10 @@ Software engineering just became centaur chess. Your coding agent writes most of
 
 ## How it works
 
-Centaur has no app and no login. Your coding agent *is* the mentor — the whole protocol lives in [`CLAUDE.md`](CLAUDE.md).
+Centaur has no app and no login. Your coding agent *is* the mentor — the whole protocol lives in [`AGENTS.md`](AGENTS.md) (the [agents.md](https://agents.md) standard). `CLAUDE.md` and `GEMINI.md` are thin shims pointing there, so it works out of the box with **Claude Code, OpenAI Codex, Cursor, Gemini CLI, Jules, Zed, Amp, opencode** — and any other agent, by telling it "read AGENTS.md and follow it".
 
 1. **Clone this repo** (fork it — your progress and profile stay in your copy).
-2. **Open it in your coding agent** — Claude Code, or any agent that reads `CLAUDE.md`.
+2. **Open it in your coding agent.**
 3. Say **"set me up"**. The agent interviews you — your role, stack, the systems you own, your highest-stakes path — and rewrites every `{{placeholder}}` in the curriculum against *your* real systems. From then on, nothing here is generic.
 4. Every day, say **"what should I learn today?"** You get exactly one item, sized to about an hour, with its reference link and a concrete first step.
 

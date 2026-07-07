@@ -13,7 +13,7 @@ Your own war stories are the evidence. A batch job that OOMs only above a certai
 
 Or just tell your agent **"quiz me"** — it picks an area, asks **one question at a time** (never multiple choice — recognition is not recall), and grades you crisp/fuzzy/blank.
 
-Fintech is the running worked example throughout, because money makes the failure modes concrete. Substitute your own domain's highest-stakes equivalent — the setup ritual in this repo's CLAUDE.md will rewrite every {{placeholder}} against your real systems. The running stack — Node/TypeScript, Postgres, Redis, AWS — is equally deliberate: the most common web-backend profile, not anyone's biography. If yours differs, setup swaps the stack-specific areas (D, E, I, J, Q, R) for your equivalents; the mechanisms transfer, the API names don't.
+Fintech is the running worked example throughout, because money makes the failure modes concrete. Substitute your own domain's highest-stakes equivalent — the setup ritual in this repo's AGENTS.md will rewrite every {{placeholder}} against your real systems. The running stack — Node/TypeScript, Postgres, Redis, AWS — is equally deliberate: the most common web-backend profile, not anyone's biography. If yours differs, setup swaps the stack-specific areas (D, E, I, J, Q, R) for your equivalents; the mechanisms transfer, the API names don't.
 
 ---
 
@@ -131,7 +131,7 @@ You spend hours a day driving an LLM — which makes this the *most* exposed "I 
 3. How does a model "call" a tool — what is actually generated, what enforces the schema, and what happens on malformed output?
 4. What does MCP standardize (tools/resources/prompts over a protocol), and what *new* attack surface does every connected MCP server open?
 5. Why does pasting a whole repo into context make answers *worse*, not better — and when does retrieval beat context-stuffing?
-6. An agent botched a task. Walk the diagnostic fork: what evidence tells you it was (a) missing context → fix the spec or rule, (b) a capability ceiling → redesign the task or stop delegating it, (c) an ambiguous spec → rewrite it? Classify 3 real misses from your own sessions — a CLAUDE.md rule bolted onto a capability ceiling fixes nothing and bloats the file.
+6. An agent botched a task. Walk the diagnostic fork: what evidence tells you it was (a) missing context → fix the spec or rule, (b) a capability ceiling → redesign the task or stop delegating it, (c) an ambiguous spec → rewrite it? Classify 3 real misses from your own sessions — a rule-file entry bolted onto a capability ceiling fixes nothing and bloats the file.
 
 *If fuzzy:* Anthropic's prompt-caching docs + context-engineering essay; modelcontextprotocol.io; then audit {{one of your own agent transcripts}} for context waste. For Q6: reread the diagnostic fork in guide.md Part 4, then classify 3 real misses from your own sessions.
 

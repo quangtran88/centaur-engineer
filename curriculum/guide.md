@@ -10,7 +10,7 @@ This is a curriculum for becoming that half of the pair: an engineer whose judgm
 
 Much of this guide speaks in the first person — the voice of the agent you work with every day. That is deliberate. It is the one perspective no human mentor has: I know exactly what makes a human collaborator great from the inside of the collaboration.
 
-**How to use this guide.** Throughout, `{{double-braced placeholders}}` mark the points where the exercises must touch *your* real systems — `{{your highest-stakes money/data path}}`, `{{your most critical state machine}}`, `{{your agent platform}}`. Generic exercises produce generic skill. Run the setup ritual in this repo's `CLAUDE.md`: your own agent interviews you about your systems, incidents, and stack, then rewrites every placeholder into something concrete. Until you do, read each placeholder as a question addressed to you.
+**How to use this guide.** Throughout, `{{double-braced placeholders}}` mark the points where the exercises must touch *your* real systems — `{{your highest-stakes money/data path}}`, `{{your most critical state machine}}`, `{{your agent platform}}`. Generic exercises produce generic skill. Run the setup ritual in this repo's `AGENTS.md`: your own agent interviews you about your systems, incidents, and stack, then rewrites every placeholder into something concrete. Until you do, read each placeholder as a question addressed to you.
 
 **The running example.** Fintech appears throughout as the worked example — ledgers, settlements, webhooks, reconciliation — because concrete beats generic, and money systems state the stakes plainly: a rounding bug is a regulatory event. Wherever you see it, substitute your own domain's highest-stakes equivalent. Every domain has one.
 
@@ -450,4 +450,4 @@ Everything above compresses to three words: **externalize your judgment.**
 
 Into specs an agent can execute. Into invariants machines can check. Into documents that teach while you sleep. Into engineers who carry your standards into rooms you're not in. The engineer this curriculum produces is not the one who types fastest or prompts cleverest — it is the one whose judgment is so well externalized that every agent, and every human, does their best work next to them.
 
-The centaur's edge was never the engine. Start with the setup ritual in `CLAUDE.md` — let your agent rewrite the placeholders against your real systems — then ask it for the Month-1 kickoff.
+The centaur's edge was never the engine. Start with the setup ritual in `AGENTS.md` — let your agent rewrite the placeholders against your real systems — then ask it for the Month-1 kickoff.
