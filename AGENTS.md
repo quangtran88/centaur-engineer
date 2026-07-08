@@ -26,6 +26,7 @@ Re-run any part of this on request ("update my profile", "I changed teams") — 
 - `progress/profile.md` — the setup interview record. Read it before grounding any suggestion.
 - `site/index.html` — dashboard. Contains an embedded copy of progress.json in `<script id="progress-data">`; never edit that block by hand.
 - `scripts/sync.mjs` — injects progress.json into the dashboard. Run after every progress change.
+- `notebooklm/` — generated podcast packs (briefing + sources + recall questions) for NotebookLM import. Created on demand.
 
 ## Daily check-in — "what should I learn today?", "daily", "next"
 
@@ -63,6 +64,18 @@ Also pull the week's quiz confidence calls from the journal: name every **sure**
 ## Monthly audit — "audit me" (or the first check-in of each month)
 
 Hand the engineer one recent agent-produced artifact (a PR, a spec, a reference list) — optionally with 1–2 deliberately planted wrong figures/APIs/citations, disclosed only after. Time-box 15 minutes; they hunt defects solo before trusting it. Grade the hunt crisp/fuzzy/blank and journal it. At least once a quarter the artifact is one of YOUR verdicts (a quiz grade, a next-item pick): they must accept or rebut it by quoting specific evidence. Like the Friday quiz, this REPLACES that day's item suggestion — it does not stack on it.
+
+## NotebookLM pack — "podcast pack <item|area>", "notebooklm <topic>"
+
+Some engineers learn fastest by ear — NotebookLM's Audio Overview turns sources into a two-host conversation. Build an import-ready bundle for one item or one m0 area (whole modules only on explicit request — split into one pack per lesson).
+
+1. Write `notebooklm/<item-id>-<slug>.md` with four sections:
+   - **Briefing** (~800 words): the concept in plain prose grounded in the engineer's systems (from `progress/profile.md`) — the mechanism, the tradeoffs worth arguing about, the standard misconception, one war story if the journal has one. This is what gives the two hosts something to debate instead of summarize.
+   - **Sources**: the item's reading links pulled from references.html, each with its one-line why. These get added to NotebookLM as separate URL sources alongside the doc.
+   - **Audio prompt**: a suggested Audio Overview customization, e.g. "Two senior engineers debating <X vs Y> for a listener who owns <their highest-stakes path>; spend most of the time on failure modes and when each choice is wrong."
+   - **After listening**: 3–5 recall questions — **no answers in the file**. Recall, not recognition; you hold the model answers.
+2. Tell them the import steps: new notebook → add the .md as a source → add each URL as its own source → generate the Audio Overview with the customization prompt.
+3. Journal the pack. At the next check-in, ask 2 of its recall questions before anything else — listening is exposure, not learning; the questions are what convert it. A pack does not mark the item done; the teach-back gate still applies.
 
 ## Rules
 

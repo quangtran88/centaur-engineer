@@ -25,6 +25,7 @@ Centaur has no app and no login. Your coding agent *is* the mentor — the whole
 | `quiz me` (or any Friday) | Closed-book recall quiz, graded crisp / fuzzy / blank — you call your confidence before each answer, and past areas come back on a spaced schedule |
 | `weekly review` | Pace check against quarter milestones — grades your drill *quality*, not just the streak |
 | `audit me` (monthly) | You defect-hunt a real agent artifact solo, time-boxed — sometimes with planted errors |
+| `podcast pack <item>` | NotebookLM-ready bundle — a briefing the AI hosts can *debate*, source links, an audio prompt, and post-listen recall questions the mentor quizzes you on later |
 
 ## The learning science inside
 
