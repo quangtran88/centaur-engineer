@@ -301,7 +301,7 @@ The audit lives in `curriculum/fundamentals-audit.md`: twenty-two areas (items `
 1. **Reconciliation proof (m7-d1):** mechanically prove {{your highest-stakes attribution claim — in the fintech example, per-user balances against the omnibus/partner statement}} — on a schedule, with alerts, not as a one-off script.
 2. Design the bitemporal version of {{one table where "what did we know on date X" matters}} — even if you don't migrate to it yet, know exactly what the migration would take.
 3. Design (on paper) the erasure path: what happens, table by table, when a user invokes right-to-erasure against your immutable history.
-4. **The mapping doc (m7-d4):** every regulation that binds you → the enforced technical control that satisfies it → the gap, if the control doesn't exist yet.
+4. **The mapping doc (the m7-p1 draft):** every regulation that binds you → the enforced technical control that satisfies it → the gap, if the control doesn't exist yet.
 
 **Prove:** A regulatory-architecture doc mapping each rule to an enforced technical control, reviewed by {{your compliance, legal, or risk partner}}.
 
@@ -392,7 +392,7 @@ Assumes ~5 focused hours/week beyond your day job — and much of the "Do" work 
 - Delegation economics table measured and published to the team.
 - **Second public artifact:** "Running sandboxed agents in production" (or your platform's equivalent story).
 - Review ratio at parity (reviews ≈ authored).
-- **Module 7 runs alongside** (if your domain is regulated) — its lessons are your day-job domain done deliberately: the reconciliation proof (m7-d1) and the regulation → architecture mapping (m7-d4) done by end of month 6.
+- **Module 7 runs alongside** (if your domain is regulated) — its lessons are your day-job domain done deliberately: the reconciliation proof (m7-d1) and the regulation → architecture mapping (the m7-p1 draft) done by end of month 6.
 
 ### Months 7–9 — Depth and failure
 - Module 3 complete.
