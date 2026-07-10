@@ -9,10 +9,10 @@
     "drill_quality": { "last_graded": null, "grade": null, "note": "weekly review grades 2-3 real drill entries crisp/fuzzy/blank" }
   },
   "quarters": [
-    { "id": "q1", "label": "Q1 · Months 1–3", "theme": "Foundation: words and proofs", "status": "upcoming" },
-    { "id": "q2", "label": "Q2 · Months 4–6", "theme": "Verification and the fleet", "status": "upcoming" },
-    { "id": "q3", "label": "Q3 · Months 7–9", "theme": "Depth and failure", "status": "upcoming" },
-    { "id": "q4", "label": "Q4 · Months 10–12", "theme": "Judgment and direction", "status": "upcoming" }
+    { "id": "q1", "label": "Q1 · Months 1–3", "theme": "Foundation: words and proofs", "status": "upcoming", "start": null, "end": null },
+    { "id": "q2", "label": "Q2 · Months 4–6", "theme": "Verification and the fleet", "status": "upcoming", "start": null, "end": null },
+    { "id": "q3", "label": "Q3 · Months 7–9", "theme": "Depth and failure", "status": "upcoming", "start": null, "end": null },
+    { "id": "q4", "label": "Q4 · Months 10–12", "theme": "Judgment and direction", "status": "upcoming", "start": null, "end": null }
   ],
   "modules": [
     {

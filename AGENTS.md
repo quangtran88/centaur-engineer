@@ -10,7 +10,7 @@ The curriculum ships with `{{double-brace placeholders}}` wherever an item must 
 
 1. **Interview the engineer.** One question at a time, conversational, not a form: their role and domain; their stack; the 2–3 systems they actually own; their highest-stakes path (the flow where a bug costs the most money, data, or trust); hours per week they can realistically give; and their self-diagnosed gaps against the honest-assessment checklist in `guide.md` Part 0.
 2. **Rewrite every `{{placeholder}}`** in `progress/progress.json` and across `curriculum/` against their real systems. Each rewrite must name a specific system, path, or incident from the interview — if you can't fill one concretely, ask a follow-up rather than leaving it generic.
-3. **Set the quarter dates** in `progress/progress.json` from their start month (Q1 = the first three months, and so on) and set `started`.
+3. **Set the quarter dates** — fill each quarter's `start`/`end` in `progress/progress.json` from their start month (Q1 = the first three months, and so on) and set `started`.
 4. **Record the interview** in `progress/profile.md` — role, systems, stakes, gaps, hours. This file contains personal and possibly employer-specific information and is gitignored by default; remind them that their personalized progress.json and curriculum ARE committed, so a personalized fork should stay private.
 5. Run `node scripts/sync.mjs`, then commit: `setup: personalize curriculum`.
 
@@ -38,7 +38,9 @@ Re-run any part of this on request ("update my profile", "I changed teams") — 
 
 For `learn` items, gate first (teach-back): before recording, ask the engineer to explain the concept back in 3–5 sentences as if briefing a mid-level engineer. Accept only a causal explanation — one that names a mechanism, a tradeoff, or a failure mode. A restated definition doesn't pass: say so and let them retry, or leave the item `in_progress`. A fluent read-through is not learning; forced teach-back roughly halves later skill decay.
 
-1. Update the item's status in `progress/progress.json`; set the top-level `updated` date. Advance `current_module` when a module's items are all done — following the guide.md Part 5 roadmap order (m1 → m2/m7 → m4 → m3/m8 → m5), not numeric id order. (m7 is an optional specialization — skip it in the sequence if the engineer opted out at setup.)
+For `do` items, gate on evidence: ask for a link or diff, command output, or a one-line "what it surfaced" naming a concrete result (the caught bug, the surviving mutant, the attack path). Nothing to show → the item stays `in_progress`. (`prove` items already gate on the artifact link — see Rules.)
+
+1. Update the item's status in `progress/progress.json`; set the top-level `updated` date. Advance `current_module` when a module's items are all done — following the guide.md Part 5 roadmap order (m1 → m2/m7 → m4 → m3/m8 → m5), not numeric id order. (m7 is an optional specialization — skip it in the sequence if the engineer opted out at setup.) That sequence is module *start* order — the roadmap deliberately overlaps modules (m7 runs alongside m2, m8 spreads across months 7–12, m4's back half lands in Q4), so treat `current_module` as the primary focus, not a hard gate: when guide.md Part 5 schedules an overlapping module's item earlier, suggest it.
 2. Append to `progress/journal.md`: `## YYYY-MM-DD` heading + 1–3 bullets (what happened, one takeaway).
 3. Run `node scripts/sync.mjs` (validates the JSON and refreshes the dashboard).
 4. Commit: `progress: <short description>`.
@@ -48,14 +50,14 @@ For `learn` items, gate first (teach-back): before recording, ask the engineer t
 1. **Re-checks first (successive relearning):** check `next_review` dates on `done` m0 items. For each area due today, re-test 2–3 of its questions before anything new. All crisp → set `next_review` to 3× the last interval (1w → 3w → 9w → …). Any fuzzy → reset `next_review` to +1 week and journal the question. `done` means *scheduled*, not finished — memory decays.
 2. Then pick ONE area from `curriculum/fundamentals-audit.md` — the current `in_progress` m0 item, else the least-recently-touched `todo`.
 3. Ask its questions **one at a time**; before each answer the engineer calls their confidence — **sure / likely / guess**. Wait for both before showing anything. No multiple choice — recall, not recognition.
-4. Grade each answer honestly: **crisp** (could teach it), **fuzzy**, or **blank**. Then give the model answer and the area's reading pointer. Never soften a fuzzy to a crisp — a false pass defeats the whole module. **Sure + fuzzy/blank is the worst outcome** — flag it on the spot; miscalibration is more dangerous than ignorance.
+4. Grade each answer honestly: **crisp** (could teach it), **fuzzy**, or **blank**. Then give the model answer and the area's reading pointer. Never soften a fuzzy to a crisp — a false pass defeats the whole module. **Sure + fuzzy/blank is the worst outcome** — flag it on the spot; miscalibration is more dangerous than ignorance. Journal every graded question's confidence → grade pair (e.g. `sure→fuzzy`) — the weekly review reads exactly these calls.
 5. Mark the m0 item `done` only when every question in the area is crisp *in one sitting* — then set `next_review` on the item (+1 week). Otherwise set it `in_progress` and journal which questions were fuzzy.
 6. End every quiz with ONE unannounced question from a previously-crisp area (interleaving). Fuzzy → reset that area's `next_review` to +1 week.
 7. When a production surprise comes up in conversation, propose one new question for the audit file (war-story autopsy rule).
 
 ## Weekly review — "weekly review"
 
-Summarize the week from the journal, give per-module completion %, flag stalls (no journal entry in 5+ days), and check pace against the quarter milestones in progress.json. When behind: shrink the current item, never skip it.
+Summarize the week from the journal, give per-module completion %, flag stalls (no journal entry in 5+ days), and check pace against the current quarter's `start`/`end` dates in progress.json and its milestones in guide.md Part 5. When behind: shrink the current item, never skip it.
 
 Also grade the drill, not just the streak: pull 2–3 actual daily-drill entries from the journal and grade each crisp/fuzzy/blank — "Constraints" must be real constraints (not restated instructions), "Done means" must be falsifiable by a command or observable check, "Not doing" must preempt a scope-creep an agent would actually take. Record in `stats.drill_quality`. A long streak of vague drills counts as a stall.
 
