@@ -1,6 +1,9 @@
 .DS_Store
 node_modules/
 
+# Local agent/orchestration state — machine-specific, never commit.
+.omc/
+
 # The setup interview record — personal and possibly employer-specific.
 # Your personalized progress.json and curriculum are still committed:
 # keep a personalized fork private.
